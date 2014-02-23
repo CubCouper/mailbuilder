@@ -8,7 +8,6 @@ Supports
 Todo
 ------------
 * Tests
-* Comments
 * Godoc
 
 Not planned
