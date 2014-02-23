@@ -13,7 +13,7 @@ type MultiPart struct {
 	boundary, contentType string
 }
 
-//Returns a new *MultiPart with a boundary initialized to a random number
+//Takes a content type and returns a new *MultiPart with a boundary initialized to a random number.
 //No seed, but we only care about consistency within the message so it's OK
 func NewMultiPart(ctype string) *MultiPart {
 	bound := "--==_Part_" + strconv.Itoa(rand.Int()) + "=="
