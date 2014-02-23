@@ -2,8 +2,8 @@ package mailbuilder
 
 import (
 	"bytes"
+	"math/rand"
 	"strconv"
-  "math/rand"
 )
 
 type MultiPart struct {

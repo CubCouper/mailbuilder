@@ -28,8 +28,8 @@ import(
       )
 
 func main() {
-  message := new(mailbuilder.Message)
-  message.To = mailbuilder.NewAddress("recip@example.net", "Recipient")
+  message := mailbuilder.NewMessage()
+  message.AddTo(mailbuilder.NewAddress("recip@example.net", "Recipient"))
   message.From = mailbuilder.NewAddress("sender@example.net", "Sender")
   message.Subject = "Subject"
   body := mailbuilder.NewSimplePart()
@@ -37,11 +37,11 @@ func main() {
   body.AddHeader("Content-Type", "text/plain; charset=utf8")
   body.AddHeader("Content-Transfer-Encoding", "quoted-printable")
   body.Content = "Hello from golang!\n"
-  auth := //gmail information
-  err := smtp.SendMail("smtp.gmail.com:587",
+  auth := //auth info
+  err := smtp.SendMail("smtp.example.com:587",
                 auth,
                 message.From.Email,
-                []string{message.To.Email},
+                message.Recipients(),
                 message.Bytes())
   if (err != nil) {fmt.Printf("%v", err)}
 }

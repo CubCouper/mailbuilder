@@ -18,7 +18,7 @@ func (self *SimplePart) AddHeader(key, value string) {
 }
 
 func (self *SimplePart) Bytes() func() []byte {
-  return func() []byte {return self.bytes()}
+	return func() []byte { return self.bytes() }
 }
 
 func (self *SimplePart) bytes() []byte {
