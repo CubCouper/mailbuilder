@@ -7,7 +7,6 @@ Supports
 
 Todo
 ------------
-* Add some functionality for message recipients
 * Tests
 * Comments
 * Godoc
