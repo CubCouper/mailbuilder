@@ -10,7 +10,7 @@ func TestBoundaries(t *testing.T) {
 	}
 }
 
-func ExampleMultiPart_s() {
+func ExampleMultiPart_single() {
 	multi := NewMultiPart("multipart/alternative")
 	html := NewSimplePart()
 	text := NewSimplePart()
@@ -24,7 +24,7 @@ func ExampleMultiPart_s() {
 	message.SetBody(multi)
 }
 
-func ExampleMultiPart_c() {
+func ExampleMultiPart_nested() {
 	//nesting multiparts, with the mixed as top level
 	alt := NewMultiPart("multipart/alternative")
 	mix := NewMultiPart("multipart/mixed")
