@@ -1,0 +1,39 @@
+{
+  "headers": {},
+  "from": {
+    "name": "Testing",
+    "email": "test@test.com"
+  },
+  "to": [
+    {
+      "name": "Test",
+      "email": "testing@testing.com"
+    }
+  ],
+  "subject": "Test Subject",
+  "body" : {
+    "multipart": "alternative",
+    "message" : [
+      {
+      "multipart": "no",
+      "message" : {
+        "headers" : {
+          "Content-Type" : "text/plain",
+          "Content-Transfer-Encoding" : "quoted-printable"
+          },
+        "content": "Testing!"
+        }
+      },
+      {
+      "multipart": "no",
+      "message" : {
+        "headers" : {
+          "Content-Type" : "text/html",
+          "Content-Transfer-Encoding" : "quoted-printable"
+          },
+        "content": "<h1>Testing!</h1>"
+        }
+      }
+    ]
+  }
+}

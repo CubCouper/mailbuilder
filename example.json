@@ -1,0 +1,24 @@
+{
+  "headers": {},
+  "from": {
+    "name": "Testing",
+    "email": "test@test.com"
+  },
+  "to": [
+    {
+      "name": "Test",
+      "email": "testing@testing.com"
+    }
+  ],
+  "subject": "Test Subject",
+  "body" : {
+    "multipart": "no",
+    "message" : {
+      "headers" : {
+        "Content-Type" : "text/plain",
+        "Content-Transfer-Encoding" : "quoted-printable"
+      },
+      "content": "Testing!"
+    }
+  }
+}

@@ -6,8 +6,8 @@ import (
 
 //Represents a simple mail body.
 type SimplePart struct {
-	Content string
-	headers map[string]string
+	Content string            `json:"content"`
+	Headers map[string]string `json:"headers"`
 }
 
 //Returns a pointer to a new Simplepart.
@@ -17,7 +17,7 @@ func NewSimplePart() *SimplePart {
 
 //Adds a header to the part.
 func (self *SimplePart) AddHeader(key, value string) {
-	self.headers[key] = value
+	self.Headers[key] = value
 }
 
 //Returns a function that builds the body when called.
@@ -29,7 +29,7 @@ func (self *SimplePart) Bytes() func() []byte {
 //Builds the body of the simplepart.
 func (self *SimplePart) bytes() []byte {
 	var b bytes.Buffer
-	for k, v := range self.headers {
+	for k, v := range self.Headers {
 		b.WriteString(k + ": " + v + "\n")
 	}
 	b.WriteString("\n")

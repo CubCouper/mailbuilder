@@ -5,10 +5,11 @@ Supports
 ------------
 * Arbitrary nesting of multiparts
 * Delayed building of e-mail body until message.Bytes() is called
+* Implements json.UnmarshalJSON, see example.json and examplemulti.json for format
 
 Todo
 ------------
-* Tests
+* None planned, accepting issues
 
 Not planned
 ------------
