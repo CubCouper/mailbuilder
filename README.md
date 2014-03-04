@@ -1,5 +1,7 @@
 Simple library for generating e-mails to send with golang's net/smtp.
+
 [![GoDoc](https://godoc.org/github.com/zerobfd/mailbuilder?status.png)](https://godoc.org/github.com/zerobfd/mailbuilder)
+[![Build Status](https://travis-ci.org/zerobfd/mailbuilder.png?branch=master)](https://travis-ci.org/zerobfd/mailbuilder)
 
 Supports
 ------------
