@@ -12,7 +12,7 @@ import (
 //Body is a func() []byte to delay actually building until Bytes() is called.
 //This allows attaching/adding info in whatever order you like.
 type Message struct {
-	body    func() []byte
+	body    BodyPart
 	headers map[string]string
 	To      []*Address
 	Cc      []*Address
@@ -49,7 +49,7 @@ func (self *Message) AddBcc(address *Address) {
 //Set the main body part of the message.
 //Takes either a simplepart or multipart.
 func (self *Message) SetBody(part BodyPart) {
-	self.body = part.Bytes()
+	self.body = part
 }
 
 //Sets a MIME header to specified value
@@ -101,7 +101,7 @@ func (self *Message) Bytes() []byte {
 		b.WriteString(v)
 		b.WriteString("\n")
 	}
-	b.Write(self.body())
+	b.Write(self.body.Bytes())
 
 	return b.Bytes()
 }

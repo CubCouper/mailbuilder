@@ -20,14 +20,8 @@ func (self *SimplePart) AddHeader(key, value string) {
 	self.Headers[key] = value
 }
 
-//Returns a function that builds the body when called.
-//Shouldn't need to call directly, message.Bytes() does this for you.
-func (self *SimplePart) Bytes() func() []byte {
-	return func() []byte { return self.bytes() }
-}
-
 //Builds the body of the simplepart.
-func (self *SimplePart) bytes() []byte {
+func (self *SimplePart) Bytes() []byte {
 	var b bytes.Buffer
 	for k, v := range self.Headers {
 		b.WriteString(k + ": " + v + "\n")
